@@ -1,0 +1,47 @@
+<!doctype html>
+<head>
+  <title>Random Dog Pictures</title>
+  <style>
+    body {
+  background-color: #5C4033;
+  color: #eee;
+  font-family: sans-serif;
+}
+
+a {
+  color: #eee;
+}
+footer {
+  float: right;
+}
+
+img {
+  height: 50%;
+  width: 300px;
+}
+
+
+</style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<header>
+  <h1>Random Dog Pictures</h1>
+</header>
+<main>
+<div id="display"></div>
+</main>
+<footer>
+  <a href="https://dog.ceo/dog-api/">Dog API</a>
+</footer>
+<script>
+var url = "https://dog.ceo/api/breeds/image/random";
+
+$.getJSON(url, function(data) {
+   display.innerHTML = `<img src="${data.message}" alt="dog">`;
+});
+</script>
+
+</body>
+</html>
